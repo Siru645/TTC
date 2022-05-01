@@ -25,6 +25,7 @@ class Player(BasePlayer):
     )
 
 
+
 # FUNCTIONS
 def set_payoffs(group: Group):
     players = group.get_players()

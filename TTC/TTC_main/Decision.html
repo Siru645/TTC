@@ -1,0 +1,35 @@
+{{ block title }}
+    Phase {{ player.round_number }} decision
+{{ endblock }}
+{{ block content }}
+
+<p>
+    Please drag and rank all schools from the most preferred to the least preferred.
+
+</p>
+
+
+<ul id="items" class="list-group list-group-numbered" style="cursor: move">
+    {{ for choice in Constants.choices }}
+    <li data-id="{{ choice }}" class="list-group-item">{{ choice }}</li>
+    {{ endfor }}
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script>
+    let el = document.getElementById('items');
+    let sortable = Sortable.create(el, {
+        onChange: function (evt) {
+            document.getElementById('ranking').value = sortable.toArray().join(',');
+        }
+    });
+</script>
+
+<input type="hidden" name="ranking" id="ranking">
+
+{{ formfield_errors 'ranking' }}
+
+<br><br>
+    {{ next_button }}
+
+{{ endblock }}

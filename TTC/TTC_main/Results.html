@@ -1,16 +1,16 @@
 {{ block title }}
-    Page title
+    Payment page
 {{ endblock }}
 
 {{ block content }}
-    p>
-    You're matched with school {{player.allocation}}
-    Your payment is  {{player.payment}}***
-
-
+    {{ if subsession.round_number == Constants.num_rounds }}
+    <p>
+        Round {{ participant.selected_round }} was randomly selected for payment.
+        Your final payoff is therefore {{ player.payoff }}, 1 point = 1 dollar.
     </p>
+    {{ endif }}
 
-    {{ next_button }}
 {{ endblock }}
+
 
 
