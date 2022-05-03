@@ -103,4 +103,5 @@ class Results(Page):
 
 # page_sequence = [Instruction, Phase1, Decision, Phase2, Decision, Wait_phase3, Phase3, Decision, Results]
 page_sequence = [Instruction, Phase1, Phase2, Phase3, Decision, Wait_phase, Results]
+
 #https://github.com/Siru645/TTC.git
