@@ -1,0 +1,16 @@
+{{ block title }}
+    Payment page
+{{ endblock }}
+
+{{ block content }}
+    {{ if subsession.round_number == Constants.num_rounds }}
+    <p>
+        Round {{ participant.selected_round }} was randomly selected for payment.
+        Your final payoff is therefore {{ player.payoff }}, 1 point = 1 dollar.
+    </p>
+    {{ endif }}
+
+{{ endblock }}
+
+
+
